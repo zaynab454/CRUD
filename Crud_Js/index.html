@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD By Javascript</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">                                                                            
+</head>
+<body>
+
+    <div class="container">
+        <br><br>
+        <button class="btn btn-outline-success" onclick="displayStg()">Add+</button>
+        <br><br>
+
+        <div class="formAdd">
+            <form onsubmit="return addStg(event)"> <!-- Passer l'événement ici -->
+                <legend>Ajouter un stagiaire</legend>
+                <label for="num1">Numero: </label>
+                <input type="number" id="num1" required>
+                <label for="nom">Nom: </label>
+                <input type="text" id="nom" required>
+                <label for="note">Note: </label>
+                <input type="number" id="note" required>
+                <label for="filiere">Filière: </label>
+                <input type="text" id="filiere" required>
+                <button type="submit" class="btn btn-success">Valider</button> <!-- Type submit -->
+            </form>
+        </div>
+        
+        <div class="updateForm" style="display: none;">
+            <form id="updateForm" onsubmit="return saveUpdateStg(event)"> <!-- Added onsubmit handler -->
+                <legend>Modifier un stagiaire</legend>
+                <label for="numU">Numero: </label>
+                <input type="number" id="numU" required>
+                <label for="nomU">Nom: </label>
+                <input type="text" id="nomU" required>
+                <label for="noteU">Note: </label>
+                <input type="number" id="noteU" required>
+                <label for="filiereU">Filière: </label>
+                <input type="text" id="filiereU" required>
+                <button type="submit" class="btn btn-success">Valider</button>
+            </form>
+        </div>
+        
+        
+
+        <div class="blocTable"></div>
+        <span id="totalStagiaires" class="mt-3"></span>
+    </div>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/crud.js"></script>
+</body>
+</html>
